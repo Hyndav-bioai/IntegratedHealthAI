@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1512">
+<title>IntegratedHealthAI | Connected Healthcare</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-icon"></div>
+            <div>
+                <h2>Integrated<span>HealthAI</span></h2>
+                <p>Connected Healthcare</p>
+            </div>
+        </div>
+
+        <div class="nav-heading">WORKSPACE</div>
+
+        <nav id="main-navigation">
+            <button class="nav-item active" data-page="dashboard">Dashboard</button>
+            <button class="nav-item" data-page="profile">My Profile</button>
+            <button class="nav-item" data-page="family">Family Members</button>
+            <button class="nav-item" data-page="care">Healthcare Connecting</button>
+            <button class="nav-item" data-page="journey">My Health Journey</button>
+
+            <div class="nav-heading">HEALTH DATA</div>
+
+            <button class="nav-item" data-page="labs">Labs &amp; Diagnostics</button>
+            <button class="nav-item" data-page="records">Health Records</button>
+            <button class="nav-item" data-page="wellness">Wellness &amp; Lifestyle</button>
+            <button class="nav-item" data-page="nutrition">Advanced Nutrition</button>
+            <button class="nav-item" data-page="mental">Mental Wellbeing</button>
+            <button class="nav-item" data-page="cycle">Cycle Tracking</button>
+
+            <div class="nav-heading">INTELLIGENCE</div>
+
+            <button class="nav-item" data-page="explorer">Health Explorer</button>
+            <button class="nav-item" data-page="ai">AI Health Support</button>
+            <button class="nav-item" data-page="age">Age-Wise Health Guide</button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <span class="status-dot"></span>
+            Frontend prototype
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <button type="button" id="menu-toggle" class="icon-button"
+                aria-label="Toggle navigation">°</button>
+
+            <div>
+                <h1 id="page-title">Dashboard</h1>
+                <p id="page-subtitle">Generations connected for a healthier tomorrow.</p>
+            </div>
+
+            <div class="topbar-badge"> Personal Health Space</div>
+        </header>
+
+        <div class="page-container">
+
+            <!-- DASHBOARD -->
+            <section class="page active" id="page-dashboard">
+
+                <div class="hero">
+                    <div class="eyebrow">INTEGRATED HEALTHCARE PLATFORM</div>
+                    <h2>Generations Connected<br>for a Healthier Tomorrow.</h2>
+                    <p>
+                        Your profile, family, healthcare systems and wellness
+                        journey connected in one place.
+                    </p>
+
+                    <div class="button-row">
+                        <button class="btn btn-primary" data-go="profile">
+                            Complete My Profile ->
+                        </button>
+                        <button class="btn btn-secondary" data-go="care">
+                            Explore Healthcare
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-icon"></span>
+                        <p>My Profile</p>
+                        <h3 id="stat-profile">Not completed</h3>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon"></span>
+                        <p>Family Members</p>
+                        <h3 id="stat-family">0</h3>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon"></span>
+                        <p>Healthcare Systems</p>
+                        <h3>6</h3>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon"></span>
+                        <p>Health Journey</p>
+                        <h3>Personal space</h3>
+                    </div>
+                </div>
+
+                <!-- SMARTCARE NAVIGATOR -->
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">YOUR HEALTH STARTS HERE</div>
+                        <h2>SmartCare Navigator</h2>
+                        <p>Describe your symptoms in the language you prefer.</p>
+                    </div>
+                </div>
+
+                <div class="panel smartcare-panel">
+                    <div class="field">
+                        <label for="sc-language">Your preferred language</label>
+                        <select id="sc-language">
+                            <option value="en-IN">English</option>
+                            <option value="te-IN">Telugu</option>
+                            <option value="hi-IN">Hindi</option>
+                            <option value="kn-IN">Kannada</option>
+                            <option value="ta-IN">Tamil</option>
+                            <option value="ml-IN">Malayalam</option>
+                            <option value="bn-IN">Bengali</option>
+                            <option value="mr-IN">Marathi</option>
+                            <option value="ur-IN">Urdu</option>
+                            <option value="ru-RU">Russian</option>
+                            <option value="de-DE">German</option>
+                            <option value="fr-FR">French</option>
+                            <option value="es-ES">Spanish</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="sc-symptoms">Describe your symptoms</label>
+                        <textarea id="sc-symptoms" rows="4"
+                            placeholder="Type your symptoms in your own language..."></textarea>
+                        <p class="help-text">
+                            Voice recognition depends on browser and language support.
+                            Review any transcript for accuracy.
+                        </p>
+                    </div>
+
+                    <div class="button-row">
+                        <button class="btn btn-secondary" id="sc-speak" type="button">
+                             Speak Symptoms
+                        </button>
+                        <button class="btn btn-secondary" id="sc-read" type="button">
+                             Read Aloud
+                        </button>
+                        <button class="btn btn-secondary" id="sc-clear" type="button">
+                            Clear
+                        </button>
+                    </div>
+
+                    <p id="sc-status" class="status-message" aria-live="polite">
+                        Enter symptoms to begin.
+                    </p>
+
+                    <div class="divider"></div>
+
+                    <h3>How would you like to proceed?</h3>
+
+                    <label class="radio-card">
+                        <input type="radio" name="sc-pathway" value="choose" checked>
+                        <span>
+                            <strong>I'll choose my healthcare system</strong>
+                            <small>Explore the systems and choose your preference.</small>
+                        </span>
+                    </label>
+
+                    <label class="radio-card">
+                        <input type="radio" name="sc-pathway" value="guide">
+                        <span>
+                            <strong>Help me decide what care to seek</strong>
+                            <small>In the full version, receive clinically reviewed care guidance.</small>
+                        </span>
+                    </label>
+
+                    <div id="sc-system-picker" class="field">
+                        <label for="sc-system">Select a healthcare system</label>
+                        <select id="sc-system">
+                            <option>Ayurveda</option>
+                            <option>Modern Medicine</option>
+                            <option>Naturopathy</option>
+                            <option>Siddha</option>
+                            <option>Unani</option>
+                            <option>Yoga & Meditation</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-primary full-width" id="sc-continue" type="button">
+                        Continue ->
+                    </button>
+
+                    <div id="sc-result" class="result-box" hidden aria-live="polite"></div>
+
+                    <div class="safety-note">
+                        <strong>Health and safety</strong>
+                        <p>
+                            This prototype does not diagnose symptoms or assess urgency.
+                            Severe or potentially life-threatening symptoms require
+                            immediate medical attention.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">YOUR WORKSPACE</div>
+                        <h2>Quick Access</h2>
+                    </div>
+                </div>
+
+                <div class="quick-grid">
+                    <button class="quick-card" data-go="profile">
+                        <span></span><strong>My Profile</strong>
+                        <small>Personal information</small>
+                    </button>
+                    <button class="quick-card" data-go="family">
+                        <span></span><strong>Family Members</strong>
+                        <small>Connected family profiles</small>
+                    </button>
+                    <button class="quick-card" data-go="care">
+                        <span></span><strong>Healthcare Connecting</strong>
+                        <small>Explore six systems</small>
+                    </button>
+                    <button class="quick-card" data-go="journey">
+                        <span>-></span><strong>My Health Journey</strong>
+                        <small>Personal notes and goals</small>
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- MY PROFILE -->
+            <section class="page" id="page-profile">
+                <div class="page-intro">
+                    <div class="eyebrow">MODULE 02</div>
+                    <h2>My Profile</h2>
+                    <p>Manage your personal information and emergency contact details.</p>
+                </div>
+
+                <div class="panel">
+                    <form id="profile-form">
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="p-name">Full name *</label>
+                                <input id="p-name" name="name" required>
+                            </div>
+                            <div class="field">
+                                <label for="p-dob">Date of birth</label>
+                                <input id="p-dob" name="dob" type="date">
+                            </div>
+                            <div class="field">
+                                <label for="p-gender">Gender</label>
+                                <select id="p-gender" name="gender">
+                                    <option value="">Prefer not to say</option>
+                                    <option>Female</option>
+                                    <option>Male</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="p-blood">Blood group</label>
+                                <select id="p-blood" name="blood">
+                                    <option value="">Not specified</option>
+                                    <option>A+</option><option>A-</option>
+                                    <option>B+</option><option>B-</option>
+                                    <option>AB+</option><option>AB-</option>
+                                    <option>O+</option><option>O-</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="p-email">Email</label>
+                                <input id="p-email" name="email" type="email">
+                            </div>
+                            <div class="field">
+                                <label for="p-phone">Phone</label>
+                                <input id="p-phone" name="phone" type="tel">
+                            </div>
+                            <div class="field">
+                                <label for="p-city">City / Town</label>
+                                <input id="p-city" name="city">
+                            </div>
+                            <div class="field">
+                                <label for="p-healthcare">Preferred healthcare system</label>
+                                <select id="p-healthcare" name="healthcare">
+                                    <option>Not selected</option>
+                                    <option>Ayurveda</option>
+                                    <option>Modern Medicine</option>
+                                    <option>Naturopathy</option>
+                                    <option>Siddha</option>
+                                    <option>Unani</option>
+                                    <option>Yoga & Meditation</option>
+                                </select>
+                            </div>
+                            <div class="field full-span">
+                                <label for="p-allergies">Allergies / sensitivities (optional)</label>
+                                <textarea id="p-allergies" name="allergies" rows="3"></textarea>
+                            </div>
+                            <div class="field">
+                                <label for="p-emergency">Emergency contact name</label>
+                                <input id="p-emergency" name="emergency">
+                            </div>
+                            <div class="field">
+                                <label for="p-emergency-phone">Emergency contact phone</label>
+                                <input id="p-emergency-phone" name="emergencyPhone" type="tel">
+                            </div>
+                        </div>
+
+                        <div class="button-row">
+                            <button class="btn btn-primary" type="submit">Save Profile</button>
+                            <button class="btn btn-secondary" type="button" id="profile-reset">Clear Form</button>
+                        </div>
+                        <p id="profile-status" class="status-message" aria-live="polite"></p>
+                    </form>
+                </div>
+            </section>
+
+            <!-- FAMILY MEMBERS -->
+            <section class="page" id="page-family">
+                <div class="page-intro">
+                    <div class="eyebrow">MODULE 03</div>
+                    <h2>Family Members</h2>
+                    <p>Create and manage separate profiles for family members.</p>
+                </div>
+
+                <div class="panel">
+                    <h3 id="family-form-heading">Add a family member</h3>
+
+                    <form id="family-form">
+                        <input type="hidden" id="f-id">
+
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="f-name">Full name *</label>
+                                <input id="f-name" required>
+                            </div>
+                            <div class="field">
+                                <label for="f-relation">Relationship *</label>
+                                <select id="f-relation" required>
+                                    <option value="">Choose relationship</option>
+                                    <option>Spouse</option>
+                                    <option>Parent</option>
+                                    <option>Child</option>
+                                    <option>Sibling</option>
+                                    <option>Grandparent</option>
+                                    <option>Grandchild</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="f-dob">Date of birth</label>
+                                <input id="f-dob" type="date">
+                            </div>
+                            <div class="field">
+                                <label for="f-gender">Gender</label>
+                                <select id="f-gender">
+                                    <option value="">Not specified</option>
+                                    <option>Female</option>
+                                    <option>Male</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="field full-span">
+                                <label for="f-healthcare">Preferred healthcare system</label>
+                                <select id="f-healthcare">
+                                    <option>Not selected</option>
+                                    <option>Ayurveda</option>
+                                    <option>Modern Medicine</option>
+                                    <option>Naturopathy</option>
+                                    <option>Siddha</option>
+                                    <option>Unani</option>
+                                    <option>Yoga & Meditation</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="button-row">
+                            <button class="btn btn-primary" id="family-save" type="submit">
+                                Add Family Member
+                            </button>
+                            <button class="btn btn-secondary" id="family-cancel"
+                                type="button" hidden>Cancel Edit</button>
+                        </div>
+
+                        <p id="family-status" class="status-message" aria-live="polite"></p>
+                    </form>
+                </div>
+
+                <div class="section-heading">
+                    <h2>Your Family</h2>
+                    <span class="pill" id="family-count">0 members</span>
+                </div>
+
+                <div id="family-list" class="family-grid"></div>
+                <div id="family-empty" class="empty-state">
+                    No family members added yet.
+                </div>
+            </section>
+
+            <!-- HEALTHCARE CONNECTING -->
+            <section class="page" id="page-care">
+                <div class="page-intro">
+                    <div class="eyebrow">MODULE 04</div>
+                    <h2>Healthcare Connecting</h2>
+                    <p>Explore different healthcare systems and approaches to wellbeing.</p>
+                </div>
+
+                <div id="care-connect-hub" class="care-connect-hub">
+                    <div class="care-connect-heading">
+                        <div class="eyebrow">YOUR HEALTHCARE NETWORK</div>
+                        <h3>Connect to Care</h3>
+                        <p>Find practitioners, healthcare facilities and pharmacies.</p>
+                    </div>
+
+                    <div class="care-location-panel">
+                        <div class="field">
+                            <label for="care-location">City, town or PIN code</label>
+                            <input id="care-location" type="text"
+                                placeholder="Enter your city or PIN code">
+                        </div>
+                        <button type="button" class="btn btn-secondary"
+                            id="care-use-location">Use My Current Location</button>
+                        <p id="care-location-status" aria-live="polite">
+                            Enter a location or allow location access.
+                        </p>
+                    </div>
+
+                    <div class="care-connect-grid">
+
+                        <article class="care-connect-card">
+                            <div class="care-connect-icon">ï¸</div>
+                            <h3>Practitioner Connect</h3>
+                            <p>Find practitioners by healthcare system and specialization.</p>
+
+                            <div class="field">
+                                <label for="care-practitioner-system">Healthcare system</label>
+                                <select id="care-practitioner-system">
+                                    <option value="Ayurvedic practitioner">Ayurveda</option>
+                                    <option value="medical doctor">Modern Medicine</option>
+                                    <option value="Siddha practitioner">Siddha</option>
+                                    <option value="Unani practitioner">Unani</option>
+                                    <option value="Naturopathy practitioner">Naturopathy</option>
+                                    <option value="Yoga therapist">Yoga and Meditation</option>
+                                    <option value="healthcare practitioner">All systems</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <label for="care-practitioner-specialty">Specialization</label>
+                                <input id="care-practitioner-specialty" type="text"
+                                    placeholder="e.g. skin, joint care, general medicine">
+                            </div>                            <div class="field care-voice-box">
+                                <label for="care-practitioner-voice-language">Voice input language</label>
+                                <select id="care-practitioner-voice-language">
+                                    <option value="en-IN">English</option>
+                                    <option value="te-IN">Telugu</option>
+                                    <option value="hi-IN">Hindi</option>
+                                    <option value="kn-IN">Kannada</option>
+                                    <option value="ta-IN">Tamil</option>
+                                    <option value="ml-IN">Malayalam</option>
+                                    <option value="ru-RU">Russian</option>
+                                    <option value="de-DE">German</option>
+                                </select>
+
+                                <button type="button" class="btn btn-secondary"
+                                    id="care-practitioner-voice">
+                                     Speak Your Requirement
+                                </button>
+
+                                <p id="care-practitioner-voice-status"
+                                    class="help-text" aria-live="polite">
+                                    Speak the type of practitioner or specialty you need.
+                                </p>
+                            </div>
+
+                            <button type="button" class="btn btn-primary"
+                                data-care-search="practitioner">Find Practitioners -></button>
+                        </article>
+
+                        <article class="care-connect-card">
+                            <div class="care-connect-icon"></div>
+                            <h3>Nearby Healthcare Centers</h3>
+                            <p>Find hospitals, clinics, Ayurvedic centers and diagnostic facilities.</p>
+
+                            <div class="field">
+                                <label for="care-center-type">Facility type</label>
+                                <select id="care-center-type">
+                                    <option value="hospital">Hospitals</option>
+                                    <option value="clinic">Clinics</option>
+                                    <option value="Ayurvedic hospital Panchakarma center">Ayurvedic centers</option>
+                                    <option value="diagnostic laboratory">Diagnostic centers</option>
+                                    <option value="healthcare center">All healthcare centers</option>
+                                </select>
+                            </div>
+
+                            <button type="button" class="btn btn-primary"
+                                data-care-search="center">Find Healthcare Centers -></button>
+                        </article>
+
+                        <article class="care-connect-card">
+                            <div class="care-connect-icon"></div>
+                            <h3>Nearby Pharmacies</h3>
+                            <p>Find pharmacies and Ayurvedic medicine stores.</p>
+
+                            <div class="field">
+                                <label for="care-pharmacy-type">Pharmacy type</label>
+                                <select id="care-pharmacy-type">
+                                    <option value="pharmacy">All pharmacies</option>
+                                    <option value="Ayurvedic medicine store">Ayurvedic medicine stores</option>
+                                    <option value="24 hour pharmacy">24-hour pharmacies</option>
+                                </select>
+                            </div>
+
+                            <button type="button" class="btn btn-primary"
+                                data-care-search="pharmacy">Find Pharmacies -></button>
+                        </article>
+
+                    </div>
+
+                    <div class="care-map-panel">
+                        <h3>Search Results</h3>
+                        <p>Open the results in Google Maps to check listings, contact details and directions.</p>
+                        <p id="care-search-status" aria-live="polite"></p>
+                        <a id="care-map-link" class="btn btn-secondary"
+                           href="https://www.google.com/maps"
+                           target="_blank" rel="noopener noreferrer">Open Google Maps</a>
+                    </div>
+                </div>
+                <div class="field search-field">
+                    <label for="care-search">Search healthcare systems</label>
+                    <input id="care-search" placeholder="Search Ayurveda, yoga, traditional care...">
+                </div>
+
+                <div id="care-grid" class="care-grid"></div>
+
+                <div id="care-detail" class="panel" hidden>
+                    <button class="btn btn-secondary" id="care-back" type="button">
+                        -> All healthcare systems
+                    </button>
+                    <div id="care-detail-content"></div>
+                </div>
+
+                <div class="safety-note">
+                    <strong>Important</strong>
+                    <p>
+                        Information is educational. Consult an appropriately
+                        qualified healthcare professional for individual care.
+                    </p>
+                </div>
+            </section>
+
+            <!-- HEALTH JOURNEY -->
+            <section class="page" id="page-journey">
+                <div class="page-intro">
+                    <div class="eyebrow">MODULE 05</div>
+                    <h2>My Health Journey</h2>
+                    <p>Record personal health notes and goals.</p>
+                </div>
+
+                <div class="panel">
+                    <form id="journey-form">
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="j-title">Title *</label>
+                                <input id="j-title" required placeholder="e.g. Walking goal">
+                            </div>
+                            <div class="field">
+                                <label for="j-date">Date</label>
+                                <input id="j-date" type="date">
+                            </div>
+                            <div class="field full-span">
+                                <label for="j-notes">Notes</label>
+                                <textarea id="j-notes" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Save Entry</button>
+                        <p id="journey-status" class="status-message" aria-live="polite"></p>
+                    </form>
+                </div>
+
+                <div id="journey-list" class="stack-list"></div>
+            </section>
+
+            <!-- PLACEHOLDER MODULES -->
+            <section class="page" id="page-labs">
+    <div class="page-intro">
+        <div class="eyebrow">MODULE 06 · DIAGNOSTICS</div>
+        <h2>Labs &amp; Diagnostics</h2>
+        <p>One organized space for laboratory reports, test results and diagnostic history.</p>
+    </div>
+
+    <div class="quick-grid labs-metrics">
+        <div class="quick-card">
+            <span>▤</span>
+            <strong id="labs-count">0</strong>
+            <small>Saved test results</small>
+        </div>
+        <div class="quick-card">
+            <span>▧</span>
+            <strong id="reports-count">0</strong>
+            <small>Uploaded reports</small>
+        </div>
+        <div class="quick-card">
+            <span>◷</span>
+            <strong id="labs-latest">—</strong>
+            <small>Latest test date</small>
+        </div>
+    </div>
+
+    <div class="panel labs-panel">
+        <div class="labs-section-heading">
+            <div>
+                <div class="eyebrow">01 · YOUR LABORATORY DATA</div>
+                <h3>Add a Lab Result</h3>
+            </div>
+        </div>
+
+        <form id="labs-result-form">
+            <div class="labs-form-grid">
+                <div class="field">
+                    <label for="labs-patient">Patient / family member</label>
+                    <input id="labs-patient" maxlength="100"
+                        placeholder="Enter patient name" required>
+                </div>
+
+                <div class="field">
+                    <label for="labs-test">Test name</label>
+                    <input id="labs-test" maxlength="120"
+                        placeholder="e.g. Complete Blood Count" required>
+                </div>
+
+                <div class="field">
+                    <label for="labs-date">Test date</label>
+                    <input id="labs-date" type="date" required>
+                </div>
+
+                <div class="field">
+                    <label for="labs-value">Result value</label>
+                    <input id="labs-value" maxlength="100"
+                        placeholder="e.g. 12.5 or Positive" required>
+                </div>
+
+                <div class="field">
+                    <label for="labs-unit">Unit</label>
+                    <input id="labs-unit" maxlength="40"
+                        placeholder="e.g. g/dL">
+                </div>
+
+                <div class="field">
+                    <label for="labs-range">Lab reference range</label>
+                    <input id="labs-range" maxlength="100"
+                        placeholder="Enter range printed on report">
+                </div>
+
+                <div class="field">
+                    <label for="labs-laboratory">Laboratory name</label>
+                    <input id="labs-laboratory" maxlength="150"
+                        placeholder="Laboratory or hospital">
+                </div>
+
+                <div class="field">
+                    <label for="labs-notes">Notes</label>
+                    <input id="labs-notes" maxlength="300"
+                        placeholder="Optional notes">
+                </div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+                + Save Lab Result
+            </button>
+        </form>
+
+        <p class="help-text">
+            Results are stored in this browser. Reference ranges vary by laboratory
+            and patient characteristics. Saving a result does not constitute a diagnosis.
+        </p>
+    </div>
+
+    <div class="panel labs-panel">
+        <div class="eyebrow">02 · DOCUMENT VAULT</div>
+        <h3>Upload Laboratory Reports</h3>
+        <p>Store PDF reports or images for later viewing in this browser.</p>
+
+        <form id="labs-report-form">
+            <div class="labs-form-grid">
+                <div class="field">
+                    <label for="labs-report-patient">Patient / family member</label>
+                    <input id="labs-report-patient" maxlength="100"
+                        placeholder="Enter patient name" required>
+                </div>
+
+                <div class="field">
+                    <label for="labs-report-date">Report date</label>
+                    <input id="labs-report-date" type="date" required>
+                </div>
+
+                <div class="field">
+                    <label for="labs-report-name">Report description</label>
+                    <input id="labs-report-name" maxlength="150"
+                        placeholder="e.g. Thyroid profile">
+                </div>
+
+                <div class="field">
+                    <label for="labs-report-file">Choose PDF or image</label>
+                    <input id="labs-report-file" type="file"
+                        accept=".pdf,.png,.jpg,.jpeg,.webp,application/pdf,image/png,image/jpeg,image/webp"
+                        required>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+                Upload Report
+            </button>
+            <p id="labs-upload-status" class="help-text" aria-live="polite"></p>
+        </form>
+
+        <div id="labs-reports-list" class="labs-list">
+            <p class="help-text">No reports uploaded yet.</p>
+        </div>
+    </div>
+
+    <div class="panel labs-panel">
+        <div class="eyebrow">03 · RESULT HISTORY</div>
+        <h3>My Lab Results</h3>
+
+        <div class="labs-search-row">
+            <div class="field">
+                <label for="labs-search">Search results</label>
+                <input id="labs-search"
+                    placeholder="Search patient, test or laboratory">
+            </div>
+            <div class="field">
+                <label for="labs-patient-filter">Filter by patient</label>
+                <input id="labs-patient-filter"
+                    placeholder="Patient name">
+            </div>
+        </div>
+
+        <div id="labs-results-list" class="labs-list">
+            <p class="help-text">Your saved results will appear here.</p>
+        </div>
+
+        <button type="button" class="btn btn-secondary"
+            id="labs-export-results">
+            Export Results as CSV
+        </button>
+    </div>
+
+    <div class="panel labs-panel">
+        <div class="eyebrow">04 · DIAGNOSTIC SERVICES</div>
+        <h3>Find a Diagnostic Laboratory</h3>
+        <p>Search for diagnostic laboratories using Google Maps.</p>
+
+        <form id="labs-finder-form">
+            <div class="labs-search-row">
+                <div class="field">
+                    <label for="labs-location">City, town or PIN code</label>
+                    <input id="labs-location" maxlength="150"
+                        placeholder="Enter your location" required>
+                </div>
+                <div class="field">
+                    <label for="labs-service">Diagnostic service</label>
+                    <select id="labs-service">
+                        <option value="diagnostic laboratories">All diagnostic labs</option>
+                        <option value="blood testing laboratory">Blood tests</option>
+                        <option value="medical imaging centre">Medical imaging</option>
+                        <option value="pathology laboratory">Pathology</option>
+                        <option value="thyroid testing laboratory">Thyroid testing</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                Find Nearby Labs ↗
+            </button>
+        </form>
+
+        <p class="help-text">
+            Google Maps will open separately. Check the laboratory's accreditation,
+            test availability, timings and pricing directly with the provider.
+            Listings are not verified by this prototype.
+        </p>
+    </div>
+
+    <div class="panel labs-privacy-note">
+        <strong>Privacy &amp; safety</strong>
+        <p>
+            This prototype stores result entries in browser storage and report files
+            in browser IndexedDB. Data is not synchronized across devices. Browser
+            data can be lost or accessed by other users of the same device.
+            Do not use this prototype as a secure clinical record system.
+        </p>
+    </div>
+</section>
+
+            <section class="page" id="page-records">
+
+    <div class="page-intro">
+        <div class="eyebrow">MODULE 07 - PERSONAL HEALTH DATA</div>
+        <h2>Health Records</h2>
+        <p>Organize medical documents, prescriptions, reports and personal health history in one place.</p>
+    </div>
+
+    <div class="quick-grid records-metrics">
+        <div class="quick-card">
+            <span>DOC</span>
+            <strong id="records-count">0</strong>
+            <small>Total documents</small>
+        </div>
+
+        <div class="quick-card">
+            <span>FILE</span>
+            <strong id="records-patients-count">0</strong>
+            <small>Patients with records</small>
+        </div>
+
+        <div class="quick-card">
+            <span>DATE</span>
+            <strong id="records-latest-date">--</strong>
+            <small>Latest record date</small>
+        </div>
+    </div>
+
+    <div class="panel records-panel">
+
+        <div class="eyebrow">01 - DOCUMENT VAULT</div>
+        <h3>Add a Health Record</h3>
+
+        <p>
+            Upload a medical document and enter its details so it can be found later.
+        </p>
+
+        <form id="records-upload-form">
+
+            <div class="records-form-grid">
+
+                <div class="field">
+                    <label for="records-patient">Patient / Family Member</label>
+                    <input id="records-patient"
+                        maxlength="100"
+                        placeholder="Enter patient name"
+                        required>
+                </div>
+
+                <div class="field">
+                    <label for="records-category">Document Category</label>
+                    <select id="records-category" required>
+                        <option value="Lab Report">Lab Report</option>
+                        <option value="Prescription">Prescription</option>
+                        <option value="Consultation">Consultation Record</option>
+                        <option value="Imaging">Imaging Report</option>
+                        <option value="Discharge Summary">Discharge Summary</option>
+                        <option value="Vaccination">Vaccination Record</option>
+                        <option value="Allergy">Allergy Record</option>
+                        <option value="Medical History">Medical History</option>
+                        <option value="Other">Other Document</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="records-title">Document Title</label>
+                    <input id="records-title"
+                        maxlength="150"
+                        placeholder="e.g. Annual health check-up"
+                        required>
+                </div>
+
+                <div class="field">
+                    <label for="records-date">Record Date</label>
+                    <input id="records-date"
+                        type="date"
+                        required>
+                </div>
+
+                <div class="field">
+                    <label for="records-provider">Hospital / Doctor / Laboratory</label>
+                    <input id="records-provider"
+                        maxlength="150"
+                        placeholder="Optional provider name">
+                </div>
+
+                <div class="field">
+                    <label for="records-file">Choose Document</label>
+                    <input id="records-file"
+                        type="file"
+                        accept=".pdf,.jpg,.jpeg,.png,.webp,.txt,application/pdf,image/jpeg,image/png,image/webp,text/plain"
+                        required>
+                </div>
+
+                <div class="field records-full-width">
+                    <label for="records-notes">Notes</label>
+                    <textarea id="records-notes"
+                        maxlength="1000"
+                        rows="3"
+                        placeholder="Optional description or notes"></textarea>
+                </div>
+
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+                Save Health Record
+            </button>
+
+            <p id="records-upload-status"
+                class="help-text"
+                aria-live="polite"></p>
+
+        </form>
+
+        <p class="help-text">
+            Supported files: PDF, JPG, PNG, WebP and TXT. Maximum file size: 10 MB.
+        </p>
+
+    </div>
+
+    <div class="panel records-panel">
+
+        <div class="eyebrow">02 - PERSONAL RECORD LIBRARY</div>
+        <h3>My Health Documents</h3>
+
+        <div class="records-search-grid">
+
+            <div class="field">
+                <label for="records-search">Search Documents</label>
+                <input id="records-search"
+                    placeholder="Search title, patient or provider">
+            </div>
+
+            <div class="field">
+                <label for="records-filter-category">Category</label>
+                <select id="records-filter-category">
+                    <option value="">All Categories</option>
+                    <option value="Lab Report">Lab Report</option>
+                    <option value="Prescription">Prescription</option>
+                    <option value="Consultation">Consultation Record</option>
+                    <option value="Imaging">Imaging Report</option>
+                    <option value="Discharge Summary">Discharge Summary</option>
+                    <option value="Vaccination">Vaccination Record</option>
+                    <option value="Allergy">Allergy Record</option>
+                    <option value="Medical History">Medical History</option>
+                    <option value="Other">Other Document</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="records-filter-patient">Patient</label>
+                <input id="records-filter-patient"
+                    placeholder="Filter by patient name">
+            </div>
+
+        </div>
+
+        <div id="records-list" class="records-list">
+            <p class="help-text">Loading your health records...</p>
+        </div>
+
+        <button type="button"
+            class="btn btn-secondary"
+            id="records-export">
+            Export Record Details as CSV
+        </button>
+
+    </div>
+
+    <div class="panel records-privacy-panel">
+        <strong>Privacy and Storage</strong>
+        <p>
+            Documents are stored in this browser on this device. They are not
+            automatically uploaded to a server or synchronized across devices.
+            Browser data may be lost or accessed by other users of this device.
+            Use fictional data during testing. This prototype is not a secure
+            clinical record system.
+        </p>
+    </div>
+
+</section>
+
+            <section class="page" id="page-wellness">
+                <div class="page-intro">
+                    <div class="eyebrow">MODULE 08 · PERSONAL WELLBEING</div>
+                    <h2>Wellness &amp; Lifestyle</h2>
+                    <p>Build healthy habits, track your daily routine and explore Ayurvedic lifestyle practices.</p>
+                </div>
+
+                <div class="wellness-hero panel">
+                    <div>
+                        <span class="wellness-kicker">YOUR DAILY WELLNESS</span>
+                        <h3 id="wellness-greeting">Small habits. Better days.</h3>
+                        <p>Track your progress one day at a time.</p>
+                    </div>
+                    <div class="wellness-score">
+                        <strong id="wellness-score">0%</strong>
+                        <span>Daily completion</span>
+                    </div>
+                </div>
+
+                <div class="wellness-stats">
+                    <div class="wellness-stat panel">
+                        <span class="wellness-stat-icon">WATER</span>
+                        <strong id="wellness-water-stat">0 / 8</strong>
+                        <span>Glasses of water</span>
+                    </div>
+                    <div class="wellness-stat panel">
+                        <span class="wellness-stat-icon">SLEEP</span>
+                        <strong id="wellness-sleep-stat">0 hrs</strong>
+                        <span>Sleep recorded</span>
+                    </div>
+                    <div class="wellness-stat panel">
+                        <span class="wellness-stat-icon">MOVE</span>
+                        <strong id="wellness-activity-stat">0 min</strong>
+                        <span>Activity recorded</span>
+                    </div>
+                </div>
+
+                <div class="wellness-layout">
+                    <div class="panel wellness-main-panel">
+                        <div class="wellness-section-heading">
+                            <div>
+                                <span class="wellness-kicker">DAILY JOURNAL</span>
+                                <h3>Today's wellness log</h3>
+                            </div>
+                            <input type="date" id="wellness-date" aria-label="Wellness date">
+                        </div>
+
+                        <form id="wellness-form">
+                            <div class="wellness-form-grid">
+                                <label>Water intake (glasses)
+                                    <div class="wellness-number-control">
+                                        <button type="button" id="wellness-water-minus" aria-label="Decrease water">−</button>
+                                        <input type="number" id="wellness-water" min="0" max="50" value="0" required>
+                                        <button type="button" id="wellness-water-plus" aria-label="Increase water">+</button>
+                                    </div>
+                                </label>
+
+                                <label>Sleep duration (hours)
+                                    <input type="number" id="wellness-sleep" min="0" max="24" step="0.5" value="0" required>
+                                </label>
+
+                                <label>Physical activity (minutes)
+                                    <input type="number" id="wellness-activity" min="0" max="1440" value="0" required>
+                                </label>
+
+                                <label>How are you feeling?
+                                    <select id="wellness-mood">
+                                        <option value="">Select mood</option>
+                                        <option value="Very good">Very good</option>
+                                        <option value="Good">Good</option>
+                                        <option value="Okay">Okay</option>
+                                        <option value="Low">Low</option>
+                                        <option value="Stressed">Stressed</option>
+                                    </select>
+                                </label>
+
+                                <label class="wellness-full-width">Meals and nutrition
+                                    <textarea id="wellness-meals" rows="2" placeholder="Record meals, fruits, vegetables or other dietary notes"></textarea>
+                                </label>
+
+                                <label class="wellness-full-width">Daily notes
+                                    <textarea id="wellness-notes" rows="2" placeholder="How was your day? Any observations or goals?"></textarea>
+                                </label>
+                            </div>
+
+                            <div class="wellness-checklist">
+                                <h4>Daily habit checklist</h4>
+                                <p>Tick the activities you completed today.</p>
+                                <div class="wellness-habit-grid">
+                                    <label class="wellness-habit"><input type="checkbox" name="wellness-habit" value="Morning routine"><span>Morning routine</span></label>
+                                    <label class="wellness-habit"><input type="checkbox" name="wellness-habit" value="Yoga or stretching"><span>Yoga or stretching</span></label>
+                                    <label class="wellness-habit"><input type="checkbox" name="wellness-habit" value="Mindful breathing"><span>Mindful breathing</span></label>
+                                    <label class="wellness-habit"><input type="checkbox" name="wellness-habit" value="Balanced meals"><span>Balanced meals</span></label>
+                                    <label class="wellness-habit"><input type="checkbox" name="wellness-habit" value="Outdoor time"><span>Outdoor time</span></label>
+                                    <label class="wellness-habit"><input type="checkbox" name="wellness-habit" value="Evening wind-down"><span>Evening wind-down</span></label>
+                                </div>
+                            </div>
+
+                            <div class="wellness-form-actions">
+                                <button type="submit" class="btn btn-primary">Save daily log</button>
+                                <button type="button" class="btn btn-secondary" id="wellness-clear">Clear form</button>
+                            </div>
+                            <p id="wellness-status" class="wellness-status" role="status" aria-live="polite"></p>
+                        </form>
+                    </div>
+
+                    <div class="wellness-side">
+                        <div class="panel">
+                            <span class="wellness-kicker">AYURVEDIC LIFESTYLE</span>
+                            <h3>Daily Dinacharya</h3>
+                            <div class="wellness-guidance">
+                                <div><strong>Morning</strong><p>Follow a regular waking routine, attend to oral hygiene and allow time for gentle movement.</p></div>
+                                <div><strong>Daytime</strong><p>Eat regular meals, take movement breaks and choose activities suited to your capacity.</p></div>
+                                <div><strong>Evening</strong><p>Reduce stimulating activities and maintain a consistent bedtime routine.</p></div>
+                            </div>
+                            <p class="wellness-disclaimer">Adapt traditional practices to your health, age, season and clinician's advice.</p>
+                        </div>
+
+                        <div class="panel">
+                            <span class="wellness-kicker">PERSONAL GOALS</span>
+                            <h3>Daily targets</h3>
+                            <div class="wellness-target">
+                                <div><span>Water</span><strong>Personalise</strong></div>
+                                <p>Set a suitable intake based on your needs and medical advice.</p>
+                            </div>
+                            <div class="wellness-target">
+                                <div><span>Movement</span><strong>Move regularly</strong></div>
+                                <p>Choose activity appropriate to your fitness and health.</p>
+                            </div>
+                            <div class="wellness-target">
+                                <div><span>Sleep</span><strong>Regular schedule</strong></div>
+                                <p>Keep a consistent sleep and wake time where possible.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel wellness-history-panel">
+                    <div class="wellness-section-heading">
+                        <div>
+                            <span class="wellness-kicker">YOUR PROGRESS</span>
+                            <h3>Wellness history</h3>
+                        </div>
+                        <span id="wellness-history-count">0 entries</span>
+                    </div>
+                    <div id="wellness-history" class="wellness-history">
+                        <p>Your saved daily logs will appear here.</p>
+                    </div>
+                </div>
+            </section>
+
+                        <section class="page" id="page-nutrition">
+                <div class="page-intro">
+                    <div class="eyebrow">MODULE 09 · NUTRITION INTELLIGENCE</div>
+                    <h2>Advanced Nutrition</h2>
+                    <p>Track meals, estimate nutritional intake and build mindful eating habits.</p>
+                </div>
+
+                <div class="panel nutrition-hero">
+                    <div>
+                        <span class="nutrition-kicker">YOUR FOOD JOURNAL</span>
+                        <h3>Eat mindfully. Track consistently.</h3>
+                        <p>Record what you eat and review your daily nutrition estimates.</p>
+                    </div>
+                    <label class="nutrition-date-label">Journal date
+                        <input type="date" id="nutrition-date">
+                    </label>
+                </div>
+
+                <div class="nutrition-summary">
+                    <div class="panel nutrition-stat">
+                        <span>ENERGY</span>
+                        <strong id="nutrition-calories">0 kcal</strong>
+                        <small>Estimated calories</small>
+                    </div>
+                    <div class="panel nutrition-stat">
+                        <span>PROTEIN</span>
+                        <strong id="nutrition-protein">0 g</strong>
+                        <small>Estimated protein</small>
+                    </div>
+                    <div class="panel nutrition-stat">
+                        <span>CARBOHYDRATES</span>
+                        <strong id="nutrition-carbs">0 g</strong>
+                        <small>Estimated carbohydrates</small>
+                    </div>
+                    <div class="panel nutrition-stat">
+                        <span>FAT</span>
+                        <strong id="nutrition-fat">0 g</strong>
+                        <small>Estimated total fat</small>
+                    </div>
+                </div>
+
+                <div class="nutrition-columns">
+                    <div class="panel nutrition-panel">
+                        <span class="nutrition-kicker">MEAL TRACKER</span>
+                        <h3>Add food to your diary</h3>
+
+                        <form id="nutrition-food-form">
+                            <label>Meal
+                                <select id="nutrition-meal" required>
+                                    <option value="Breakfast">Breakfast</option>
+                                    <option value="Lunch">Lunch</option>
+                                    <option value="Dinner">Dinner</option>
+                                    <option value="Snack">Snack</option>
+                                </select>
+                            </label>
+
+                            <label>Food
+                                <select id="nutrition-food" required>
+                                    <option value="idli">Idli — 2 medium</option>
+                                    <option value="dosa">Plain dosa — 1 medium</option>
+                                    <option value="upma">Vegetable upma — 1 cup</option>
+                                    <option value="rice">Cooked rice — 1 cup</option>
+                                    <option value="roti">Chapati — 1 medium</option>
+                                    <option value="dal">Cooked dal — 1 cup</option>
+                                    <option value="curd">Plain curd — 1 cup</option>
+                                    <option value="milk">Milk — 1 cup</option>
+                                    <option value="banana">Banana — 1 medium</option>
+                                    <option value="apple">Apple — 1 medium</option>
+                                    <option value="sprouts">Sprouts — 1 cup</option>
+                                    <option value="egg">Boiled egg — 1 large</option>
+                                    <option value="paneer">Paneer — 100 g</option>
+                                    <option value="oats">Cooked oats — 1 cup</option>
+                                    <option value="khichdi">Vegetable khichdi — 1 cup</option>
+                                </select>
+                            </label>
+
+                            <label>Number of servings
+                                <input type="number" id="nutrition-servings" min="0.25" max="20" step="0.25" value="1" required>
+                            </label>
+
+                            <button type="submit" class="btn btn-primary">Add to food diary</button>
+                            <p id="nutrition-status" role="status" aria-live="polite"></p>
+                        </form>
+
+                        <div class="nutrition-food-list">
+                            <h3>Today's food entries</h3>
+                            <div id="nutrition-food-list">
+                                <p>No food entries for this date yet.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nutrition-side">
+                        <div class="panel nutrition-panel">
+                            <span class="nutrition-kicker">PERSONAL GOALS</span>
+                            <h3>Daily nutrition targets</h3>
+                            <p class="nutrition-muted">Set your own targets based on your needs or advice from a qualified healthcare professional.</p>
+
+                            <form id="nutrition-goals-form">
+                                <label>Calories (kcal)
+                                    <input type="number" id="nutrition-goal-calories" min="1" max="10000" value="2000" required>
+                                </label>
+                                <label>Protein (g)
+                                    <input type="number" id="nutrition-goal-protein" min="1" max="500" value="50" required>
+                                </label>
+                                <button type="submit" class="btn btn-secondary">Save targets</button>
+                                <p id="nutrition-goal-status" role="status"></p>
+                            </form>
+
+                            <div class="nutrition-progress">
+                                <div class="nutrition-progress-heading"><span>Energy progress</span><strong id="nutrition-calorie-progress-text">0%</strong></div>
+                                <div class="nutrition-progress-track"><div id="nutrition-calorie-progress"></div></div>
+                                <div class="nutrition-progress-heading"><span>Protein progress</span><strong id="nutrition-protein-progress-text">0%</strong></div>
+                                <div class="nutrition-progress-track"><div id="nutrition-protein-progress"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="panel nutrition-panel">
+                            <span class="nutrition-kicker">AYURVEDIC NUTRITION</span>
+                            <h3>Mindful eating</h3>
+                            <div class="nutrition-guidance">
+                                <p><strong>Regular meals</strong><br>Maintain a routine that suits your appetite, schedule and health needs.</p>
+                                <p><strong>Food qualities</strong><br>Traditional Ayurveda considers qualities such as heaviness, lightness, warmth and dryness when discussing food choices.</p>
+                                <p><strong>Seasonal awareness</strong><br>Choose varied, appropriate foods according to local availability and individual tolerance.</p>
+                            </div>
+                            <p class="nutrition-disclaimer">Traditional guidance is not a substitute for individual nutritional assessment or medical care.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel nutrition-history-panel">
+                    <span class="nutrition-kicker">YOUR RECORDS</span>
+                    <h3>Nutrition history</h3>
+                    <div id="nutrition-history">
+                        <p>Your saved food diaries will appear here.</p>
+                    </div>
+                </div>
+            </section>
+
+<section class="page" id="page-mental">
+    <div class="page-intro">
+        <div class="eyebrow">MINDFULNESS · SELF-CARE · RESILIENCE</div>
+        <h2>Mental Wellbeing</h2>
+        <p>A quiet space to check in with yourself, practise mindful breathing and reflect on your wellbeing.</p>
+    </div>
+
+    <div class="mental-welcome">
+        <div>
+            <span class="mental-kicker">YOUR DAILY PAUSE</span>
+            <h3>Take a moment for yourself.</h3>
+            <p>You do not need to solve everything at once. Start with one small step.</p>
+        </div>
+        <div class="mental-welcome-icon" aria-hidden="true">✦</div>
+    </div>
+
+    <div class="mental-section-heading">
+        <div>
+            <span class="mental-kicker">DAILY CHECK-IN</span>
+            <h3>How are you feeling today?</h3>
+        </div>
+    </div>
+
+    <form id="mental-wellness-form">
+        <div class="mental-grid">
+            <div class="panel mental-card">
+                <label for="mental-date">Journal date</label>
+                <input type="date" id="mental-date" required>
+
+                <label for="mental-mood">Your mood</label>
+                <select id="mental-mood" required>
+                    <option value="">Choose your mood</option>
+                    <option value="Very positive">😊 Very positive</option>
+                    <option value="Good">🙂 Good</option>
+                    <option value="Okay">😐 Okay</option>
+                    <option value="Low">😔 Low</option>
+                    <option value="Anxious">😟 Anxious</option>
+                    <option value="Overwhelmed">😣 Overwhelmed</option>
+                </select>
+
+                <label for="mental-stress">Stress level: <strong id="mental-stress-value">3/10</strong></label>
+                <input type="range" id="mental-stress" min="1" max="10" value="3">
+                <div class="mental-range-labels">
+                    <span>Low stress</span>
+                    <span>High stress</span>
+                </div>
+            </div>
+
+            <div class="panel mental-card">
+                <label for="mental-sleep-hours">Sleep duration (hours)</label>
+                <input type="number" id="mental-sleep-hours" min="0" max="24" step="0.25" placeholder="e.g. 7.5">
+
+                <label for="mental-sleep-quality">How was your sleep?</label>
+                <select id="mental-sleep-quality">
+                    <option value="">Choose sleep quality</option>
+                    <option value="Restful">Restful</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Interrupted">Interrupted</option>
+                    <option value="Poor">Poor</option>
+                </select>
+
+                <label for="mental-journal">Your thoughts and reflections</label>
+                <textarea id="mental-journal" rows="5" maxlength="3000" placeholder="What is on your mind? What went well today? What would help you feel supported?"></textarea>
+                <small class="mental-muted">Your reflection is saved locally in this browser.</small>
+            </div>
+        </div>
+
+        <div class="mental-form-actions">
+            <button type="submit" class="btn btn-primary">Save Daily Check-In</button>
+            <span id="mental-save-status" role="status" aria-live="polite"></span>
+        </div>
+    </form>
+
+    <div class="mental-section-heading">
+        <div>
+            <span class="mental-kicker">RESET & REFOCUS</span>
+            <h3>Guided breathing</h3>
+            <p>Follow a gentle breathing rhythm. Keep breathing comfortably and stop if you feel dizzy or uncomfortable.</p>
+        </div>
+    </div>
+
+    <div class="panel mental-breathing-card">
+        <div class="mental-breathing-visual">
+            <div id="mental-breathing-circle">
+                <span id="mental-breathing-stage">Ready</span>
+                <strong id="mental-breathing-count">01:00</strong>
+            </div>
+        </div>
+        <div class="mental-breathing-info">
+            <span class="mental-kicker">ONE-MINUTE PRACTICE</span>
+            <h3>Pause. Breathe. Continue.</h3>
+            <p id="mental-breathing-instruction">Start when you feel ready. Breathe naturally without forcing or holding your breath if uncomfortable.</p>
+            <div class="mental-button-row">
+                <button type="button" class="btn btn-primary" id="mental-breathing-start">Start breathing</button>
+                <button type="button" class="btn btn-secondary" id="mental-breathing-stop">Stop</button>
+            </div>
+            <small class="mental-muted">Inhale gently, pause if comfortable, then exhale slowly. This is optional; return to normal breathing at any time.</small>
+        </div>
+    </div>
+
+    <div class="mental-section-heading">
+        <div>
+            <span class="mental-kicker">MINDFULNESS CORNER</span>
+            <h3>Small exercises, present moment</h3>
+        </div>
+    </div>
+
+    <div class="mental-grid mental-practice-grid">
+        <article class="panel mental-card">
+            <div class="mental-practice-icon">🌿</div>
+            <h3>Grounding exercise</h3>
+            <p>Bring your attention gently back to the present moment.</p>
+            <button type="button" class="btn btn-secondary" id="mental-grounding-start">Try grounding</button>
+            <div id="mental-grounding-content" class="mental-exercise-result" aria-live="polite">
+                Try noticing five things you can see, four things you can feel, and three things you can hear.
+            </div>
+        </article>
+
+        <article class="panel mental-card">
+            <div class="mental-practice-icon">☀️</div>
+            <h3>Gratitude pause</h3>
+            <p>Notice one small thing that brought comfort, meaning or connection today.</p>
+            <button type="button" class="btn btn-secondary" id="mental-gratitude-start">Reflect</button>
+            <div id="mental-gratitude-content" class="mental-exercise-result" aria-live="polite">
+                What is one thing you appreciate about today, however small?
+            </div>
+        </article>
+
+        <article class="panel mental-card">
+            <div class="mental-practice-icon">🌙</div>
+            <h3>Gentle evening wind-down</h3>
+            <p>Create a calmer transition towards rest with a simple routine.</p>
+            <ul class="mental-simple-list">
+                <li>Reduce stimulating screen time before bed.</li>
+                <li>Choose a quiet, comfortable environment.</li>
+                <li>Try gentle stretching or relaxed breathing.</li>
+            </ul>
+        </article>
+    </div>
+
+    <!-- INTEGRATEDHEALTHAI_YOUTUBE_MEDITATION_V1 -->
+<div class="mental-section-heading">
+    <div>
+        <span class="mental-kicker">GUIDED MEDITATION LIBRARY</span>
+        <h3>Find a moment of calm</h3>
+        <p>Choose a guided session that suits your needs. YouTube opens external content.</p>
+    </div>
+</div>
+
+<div class="panel mental-card mental-youtube-panel">
+    <span class="mental-kicker">FEATURED SESSION</span>
+    <h3>10-Minute Guided Breathing Meditation</h3>
+    <p>Follow a guided breathing meditation from Great Meditation.</p>
+
+    <div class="mental-youtube-frame">
+        <iframe
+            src="https://www.youtube-nocookie.com/embed/VUjiXcfKBn8"
+            title="10 Minute Guided Breathing Meditation"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <p>
+        <a class="btn btn-primary"
+           href="https://www.youtube.com/watch?v=VUjiXcfKBn8"
+           target="_blank"
+           rel="noopener noreferrer">
+           Watch on YouTube
+        </a>
+    </p>
+</div>
+
+<div class="mental-grid mental-youtube-options">
+    <article class="panel mental-card">
+        <div class="mental-practice-icon">🌙</div>
+        <h3>Sleep Meditation</h3>
+        <p>Explore guided relaxation sessions designed for a bedtime routine.</p>
+        <a class="btn btn-secondary"
+           href="https://www.youtube.com/results?search_query=guided+sleep+meditation"
+           target="_blank"
+           rel="noopener noreferrer">
+           Explore Sleep Meditations
+        </a>
+    </article>
+
+    <article class="panel mental-card">
+        <div class="mental-practice-icon">🌿</div>
+        <h3>Mindfulness Meditation</h3>
+        <p>Explore guided mindfulness sessions for everyday reflection.</p>
+        <a class="btn btn-secondary"
+           href="https://www.youtube.com/results?search_query=guided+mindfulness+meditation+10+minutes"
+           target="_blank"
+           rel="noopener noreferrer">
+           Explore Mindfulness
+        </a>
+    </article>
+
+    <article class="panel mental-card">
+        <div class="mental-practice-icon">🧘</div>
+        <h3>Relaxation & Stress Relief</h3>
+        <p>Find guided relaxation practices and gentle meditation sessions.</p>
+        <a class="btn btn-secondary"
+           href="https://www.youtube.com/results?search_query=guided+relaxation+meditation+stress+relief"
+           target="_blank"
+           rel="noopener noreferrer">
+           Explore Relaxation
+        </a>
+    </article>
+</div>
+<!-- END INTEGRATEDHEALTHAI_YOUTUBE_MEDITATION_V1 -->
+<div class="mental-section-heading">
+        <div>
+            <span class="mental-kicker">YOUR PERSONAL RECORD</span>
+            <h3>Wellness history</h3>
+            <p>Revisit saved check-ins and notice patterns over time.</p>
+        </div>
+    </div>
+
+    <div class="panel mental-history-panel">
+        <div id="mental-wellness-history">
+            <p class="mental-muted">Your saved check-ins will appear here.</p>
+        </div>
+    </div>
+
+    <div class="mental-safety-note">
+        <strong>A gentle reminder</strong>
+        <p>This space supports self-reflection and everyday wellbeing. It does not diagnose conditions or replace professional mental health care. If distress persists or affects daily life, consider speaking with a qualified professional. If you are in immediate danger, contact local emergency services.</p>
+    </div>
+</section>
+
+            <section class="page" id="page-cycle">
+  <div class="page-intro">
+    <div class="eyebrow">WOMEN'S HEALTH</div>
+    <h2>Cycle Tracking</h2>
+    <p>Understand your menstrual patterns and keep your personal health records together.</p>
+  </div>
+
+  <div class="cycle-summary-grid">
+    <div class="panel cycle-summary-card">
+      <span class="cycle-label">Last period started</span>
+      <strong id="cycle-last-period">Not recorded</strong>
+    </div>
+    <div class="panel cycle-summary-card">
+      <span class="cycle-label">Average cycle length</span>
+      <strong id="cycle-average">Not enough data</strong>
+    </div>
+    <div class="panel cycle-summary-card">
+      <span class="cycle-label">Estimated next period</span>
+      <strong id="cycle-next-period">Add a period record</strong>
+    </div>
+    <div class="panel cycle-summary-card">
+      <span class="cycle-label">Recorded cycles</span>
+      <strong id="cycle-total">0</strong>
+    </div>
+  </div>
+
+  <div class="panel cycle-form-panel">
+    <div class="cycle-section-heading">
+      <div>
+        <div class="eyebrow">DAILY HEALTH RECORD</div>
+        <h3>Log your period</h3>
+      </div>
+      <span class="cycle-badge">Personal tracker</span>
+    </div>
+
+    <form id="cycle-entry-form">
+      <div class="cycle-form-grid">
+        <label>Period start date *
+          <input id="cycle-start" type="date" required>
+        </label>
+
+        <label>Period end date
+          <input id="cycle-end" type="date">
+        </label>
+
+        <label>Flow intensity
+          <select id="cycle-flow">
+            <option value="">Select flow</option>
+            <option>Spotting</option>
+            <option>Light</option>
+            <option>Moderate</option>
+            <option>Heavy</option>
+          </select>
+        </label>
+
+        <label>Pain level: <span id="cycle-pain-value">0</span>/10
+          <input id="cycle-pain" type="range" min="0" max="10" value="0">
+        </label>
+
+        <label>Sleep duration (hours)
+          <input id="cycle-sleep" type="number" min="0" max="24" step="0.5" placeholder="e.g. 7.5">
+        </label>
+
+        <label>Mood
+          <select id="cycle-mood">
+            <option value="">Select mood</option>
+            <option>Calm</option>
+            <option>Happy</option>
+            <option>Energetic</option>
+            <option>Low</option>
+            <option>Anxious</option>
+            <option>Irritable</option>
+            <option>Emotional</option>
+          </select>
+        </label>
+
+        <label>Weight (kg)
+          <input id="cycle-weight" type="number" min="1" max="500" step="0.1" placeholder="Optional">
+        </label>
+
+        <label>Physical activity
+          <select id="cycle-activity">
+            <option value="">Select activity</option>
+            <option>Rest</option>
+            <option>Light walking</option>
+            <option>Yoga or stretching</option>
+            <option>Moderate exercise</option>
+            <option>Intense exercise</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="cycle-full-field">Symptoms
+        <textarea id="cycle-symptoms" rows="3" placeholder="e.g. cramps, bloating, headache, breast tenderness"></textarea>
+      </label>
+
+      <label class="cycle-full-field">Personal notes
+        <textarea id="cycle-notes" rows="3" placeholder="Anything you would like to record"></textarea>
+      </label>
+
+      <div class="cycle-actions">
+        <button type="submit" class="btn-primary">Save period record</button>
+        <button type="reset" class="cycle-secondary-button">Reset form</button>
+      </div>
+      <p id="cycle-form-message" class="cycle-message" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+
+  <div class="panel cycle-history-panel">
+    <div class="cycle-section-heading">
+      <div>
+        <div class="eyebrow">YOUR RECORDS</div>
+        <h3>Cycle history</h3>
+      </div>
+      <button type="button" id="cycle-export" class="cycle-secondary-button">Export records</button>
+    </div>
+    <p class="cycle-muted">Your saved entries appear here, newest first.</p>
+    <div id="cycle-history-list" class="cycle-history-list"></div>
+  </div>
+
+  <div class="panel cycle-info-panel">
+    <h3>Understanding your patterns</h3>
+    <p>Cycle length is measured from the first day of one period to the first day of the next. Estimates become more useful when several start dates are recorded, but they cannot guarantee when your next period will begin.</p>
+    <p>Cycle changes can have many causes. Seek medical advice for persistent irregularity, unusually heavy bleeding, severe pain or other concerning symptoms. This tracker does not diagnose or replace a clinical assessment.</p>
+    <p class="cycle-privacy-note">Privacy: records are stored in this browser on this device. They are not automatically sent to your healthcare provider or synced to another device. Clearing browser storage may remove them.</p>
+  </div>
+</section>
+
+            <section class="page" id="page-explorer">
+  <div class="page-intro">
+    <div class="eyebrow">INTEGRATED HEALTH KNOWLEDGE</div>
+    <h2>Health Explorer</h2>
+    <p>Explore body systems, common health conditions, preventive care and traditional healthcare systems.</p>
+  </div>
+
+  <div class="panel explorer-search-panel">
+    <label for="explorer-search">Search the health library</label>
+    <input id="explorer-search" type="search"
+      placeholder="Search topics, symptoms or body systems..."
+      autocomplete="off">
+    <p class="explorer-helper">Search the educational topics available in this module.</p>
+  </div>
+
+  <div class="explorer-filter-row" aria-label="Health topic categories">
+    <button type="button" class="explorer-filter active" data-explorer-filter="all">All topics</button>
+    <button type="button" class="explorer-filter" data-explorer-filter="systems">Body systems</button>
+    <button type="button" class="explorer-filter" data-explorer-filter="conditions">Conditions</button>
+    <button type="button" class="explorer-filter" data-explorer-filter="prevention">Prevention</button>
+    <button type="button" class="explorer-filter" data-explorer-filter="ayurveda">Ayurveda</button>
+    <button type="button" class="explorer-filter" data-explorer-filter="lifestages">Life stages</button>
+  </div>
+
+  <div class="explorer-results-bar">
+    <span id="explorer-results-count" aria-live="polite">12 educational topics</span>
+    <span>HEALTH EDUCATION</span>
+  </div>
+
+  <div class="explorer-topic-grid" id="explorer-topic-grid">
+
+    <article class="panel explorer-topic-card" data-explorer-category="systems" data-explorer-search="heart cardiovascular blood pressure circulation pulse">
+      <div class="explorer-topic-icon">♡</div>
+      <span class="explorer-topic-tag">BODY SYSTEMS</span>
+      <h3>Heart and Circulation</h3>
+      <p>Learn about the heart, blood vessels, circulation and everyday cardiovascular health.</p>
+      <h4>Explore</h4>
+      <ul><li>Blood pressure basics</li><li>Heart-healthy habits</li><li>When symptoms need urgent attention</li></ul>
+    <button type="button" class="explorer-open-topic">Explore Topic →</button></article>
+
+    <article class="panel explorer-topic-card" data-explorer-category="systems" data-explorer-search="digestive stomach intestine gut digestion acidity constipation">
+      <div class="explorer-topic-icon">◉</div>
+      <span class="explorer-topic-tag">BODY SYSTEMS</span>
+      <h3>Digestive Health</h3>
+      <p>Explore digestion, bowel habits, hydration and the role of balanced nutrition.</p>
+      <h4>Explore</h4>
+      <ul><li>Digestive system basics</li><li>Fibre and hydration</li><li>Common digestive symptoms</li></ul>
+    <button type="button" class="explorer-open-topic">Explore Topic →</button></article>
+
+    <article class="panel explorer-topic-card" data-explorer-category="systems" data-explorer-search="respiratory lungs breathing asthma cough oxygen">
+      <div class="explorer-topic-icon">〰</div>
+      <span class="explorer-topic-tag">BODY SYSTEMS</span>
+      <h3>Respiratory Health</h3>
+      <p>Understand breathing, lung function and ways to reduce exposure to respiratory irritants.</p>
+      <h4>Explore</h4>
+      <ul><li>Lung function</li><li>Air quality and smoking</li><li>Breathing warning signs</li></ul>
+    <button type="button" class="explorer-open-topic">Explore Topic →</button></article>
+
+    <article class="panel explorer-topic-card" data-explorer-category="systems" data-explorer-search="nervous brain nerves sleep memory stress neurological">
+      <div class="explorer-topic-icon">✳</div>
+      <span class="explorer-topic-tag">BODY SYSTEMS</span>
+      <h3>Brain and Nervous System</h3>
+      <p>Discover how the brain, spinal cord and nerves support movement, memory and sensation.</p>
+      <h4>Explore</h4>
+      <ul><li>Sleep and brain health</li><li>Memory and concentration</li><li>Neurological warning signs</li></ul>
+    <button type="button" class="explorer-open-topic">Explore Topic →</button></article>
+
+    <article class="panel explorer-topic-card" data-explorer-category="conditions" data-explorer-search="diabetes blood sugar glucose insulin metabolic">
+      <div class="explorer-topic-icon">◈</div>
+      <span class="explorer-topic-tag">COMMON CONDITIONS</span>
+      <h3>Diabetes and Blood Sugar</h3>
+      <p>Learn about glucose regulation, risk factors, screening and long-term monitoring.</p>
+      <h4>Explore</h4>
+      <ul><li>Type 1 and type 2 diabetes</li><li>Screening and follow-up</li><li>Nutrition and activity</li></ul>
+    <button type="button" class="explorer-open-topic">Explore Topic →</button></article>
+
+    <article class="panel explorer-topic-card" data-explorer-category="conditions" data-explorer-search="hypertension high blood pressure cardiovascular risk">
+      <div class="explorer-topic-icon">↗</div>
+      <span class="explorer-topic-tag">COMMON CONDITIONS</span>
+      <h3>High Blood Pressure</h3>
+      <p>Understand hypertension, accurate measurement and why routine monitoring matters.</p>
+      <h4>Explore</h4>
+      <ul><li>Understanding readings</li><li>Modifiable risk factors</li><li>Medical follow-up</li></ul>
+    <button type="button" class="explorer-open-topic">Explore Topic →</button></article>
+
+    <article class="panel explorer-topic-card" data-explorer-category="conditions" data-explorer-search="musculoskeletal joints bones muscles arthritis back pain osteoporosis">
+      <div class="explorer-topic-icon">◇</div>
+      <span class="explorer-topic-tag">COMMON CONDITIONS</span>
+      <h3>Bones, Joints and Muscles</h3>
+      <p>Explore musculoskeletal health, mobility, joint symptoms and bone-strengthening habits.</p>
+      <h4>Explore</h4>
+      <ul><li>Bone health</li><li>Posture and movement</li><li>Persistent pain assessment</li></ul>
+    <button type="button" class="explorer-open-topic">Explore Topic →</button></article>
+
+    <article class="panel explorer-topic-card" data-explorer-category="prevention" data-explorer-search="nutrition balanced diet protein vegetables fibre healthy eating">
+      <div class="explorer-topic-icon">❋</div>
+      <span class="explorer-topic-tag">PREVENTION</span>
+      <h3>Nutrition and Healthy Eating</h3>
+      <p>Learn about balanced meals, nutrient variety and practical everyday food choices.</p>
+      <h4>Explore</h4>
+      <ul><li>Protein and fibre</li><li>Fruit and vegetables</li><li>Hydration and meal balance</li></ul>
+    <button type="button" class="explorer-open-topic">Explore Topic →</button></article>
+
+    <article class="panel explorer-topic-card" data-explorer-category="prevention" data-explorer-search="physical activity exercise fitness walking yoga sleep stress prevention">
+      <div class="explorer-topic-icon">✧</div>
+      <span class="explorer-topic-tag">PREVENTION</span>
+      <h3>Movement and Lifestyle</h3>
+      <p>Explore physical activity, restorative sleep, stress management and sustainable routines.</p>
+      <h4>Explore</h4>
+      <ul><li>Regular physical activity</li><li>Sleep routines</li><li>Stress-management skills</li></ul>
+    <button type="button" class="explorer-open-topic">Explore Topic →</button></article>
+
+    <article class="panel explorer-topic-card" data-explorer-category="ayurveda" data-explorer-search="ayurveda dosha vata pitta kapha prakriti dinacharya traditional medicine">
+      <div class="explorer-topic-icon">❀</div>
+      <span class="explorer-topic-tag">AYURVEDA</span>
+      <h3>Ayurveda and Daily Routine</h3>
+      <p>Explore traditional Ayurvedic concepts, including Dinacharya, Prakriti and lifestyle practices.</p>
+      <h4>Explore</h4>
+      <ul><li>Traditional concepts of Vata, Pitta and Kapha</li><li>Daily routine principles</li><li>Discussing treatment safety</li></ul>
+    <button type="button" class="explorer-open-topic">Explore Topic →</button></article>
+
+    <article class="panel explorer-topic-card" data-explorer-category="ayurveda" data-explorer-search="integrative healthcare modern medicine unani siddha naturopathy yoga evidence safety">
+      <div class="explorer-topic-icon">◎</div>
+      <span class="explorer-topic-tag">INTEGRATED HEALTHCARE</span>
+      <h3>Explore Healthcare Systems</h3>
+      <p>Compare healthcare approaches while distinguishing traditional concepts from established clinical evidence.</p>
+      <h4>Explore</h4>
+      <ul><li>Ayurveda</li><li>Modern medicine, Unani and Siddha</li><li>Naturopathy and Yoga</li></ul>
+    <button type="button" class="explorer-open-topic">Explore Topic →</button></article>
+
+    <article class="panel explorer-topic-card" data-explorer-category="lifestages" data-explorer-search="age children adolescents adults older adults ageing preventive screening life stages">
+      <div class="explorer-topic-icon">⌁</div>
+      <span class="explorer-topic-tag">LIFE STAGES</span>
+      <h3>Health Across the Lifespan</h3>
+      <p>Explore how health priorities change through childhood, adolescence, adulthood and older age.</p>
+      <h4>Explore</h4>
+      <ul><li>Age-appropriate screening</li><li>Healthy ageing</li><li>Preventive health discussions</li></ul>
+    <button type="button" class="explorer-open-topic">Explore Topic →</button></article>
+
+  </div>
+
+  <div id="explorer-empty" class="panel explorer-empty" hidden>
+    <h3>No matching topics found</h3>
+    <p>Try another search term or select a different category.</p>
+    <button type="button" id="explorer-clear">Clear search and filters</button>
+  </div>
+
+  <div class="panel explorer-disclaimer">
+    <h3>Educational information only</h3>
+    <p>This library supports health education. It does not diagnose conditions or replace individual medical advice. Do not stop prescribed medicines or delay urgent care based on information found here. Treatment decisions should consider individual history, examination and reliable clinical evidence.</p>
+  </div>
+</section>
+
+            <section class="page" id="page-ai">
+
+  <div class="page-intro">
+    <div class="eyebrow">INTEGRATEDHEALTHAI · SMART SUPPORT</div>
+    <h2>AI Health Support</h2>
+    <p>Organize your health concerns, prepare for consultations and explore appropriate healthcare pathways.</p>
+  </div>
+
+  <div class="ai-support-notice">
+    <strong>Health support, not diagnosis</strong>
+    <p>This module helps organize information and prepare questions. It does not diagnose conditions, prescribe medicines or replace a healthcare professional.</p>
+  </div>
+
+  <div class="ai-support-grid">
+
+    <article class="panel ai-support-card">
+      <div class="ai-support-icon">01</div>
+      <h3>Symptom Organizer</h3>
+      <p>Record what you are experiencing in a structured format.</p>
+
+      <form id="ai-support-form">
+        <label for="ai-concern">Main health concern *</label>
+        <textarea id="ai-concern" rows="3" required maxlength="3000"
+          placeholder="Describe the concern in your own words"></textarea>
+
+        <div class="ai-support-fields">
+          <label for="ai-duration">When did it start?
+            <input id="ai-duration" type="text" maxlength="200"
+              placeholder="e.g. 3 days ago">
+          </label>
+
+          <label for="ai-severity">Severity
+            <select id="ai-severity">
+              <option value="">Choose severity</option>
+              <option>Mild</option>
+              <option>Moderate</option>
+              <option>Severe</option>
+              <option>Sudden or rapidly worsening</option>
+            </select>
+          </label>
+
+          <label for="ai-pattern">Pattern
+            <select id="ai-pattern">
+              <option value="">Choose pattern</option>
+              <option>Constant</option>
+              <option>Comes and goes</option>
+              <option>Getting better</option>
+              <option>Getting worse</option>
+              <option>Not sure</option>
+            </select>
+          </label>
+
+          <label for="ai-associated">Other symptoms
+            <textarea id="ai-associated" rows="2" maxlength="1500"
+              placeholder="Other symptoms you have noticed"></textarea>
+          </label>
+
+          <label for="ai-history">Relevant medical history
+            <textarea id="ai-history" rows="2" maxlength="1500"
+              placeholder="Existing conditions, allergies or relevant history"></textarea>
+          </label>
+
+          <label for="ai-medicines">Current medicines and supplements
+            <textarea id="ai-medicines" rows="2" maxlength="1500"
+              placeholder="Include prescribed and non-prescribed products"></textarea>
+          </label>
+        </div>
+
+        <button type="submit" class="ai-support-primary">Organize My Health Summary</button>
+      </form>
+    </article>
+
+    <article class="panel ai-support-card">
+      <div class="ai-support-icon">02</div>
+      <h3>Consultation Preparation</h3>
+      <p>Prepare useful questions to discuss with your healthcare professional.</p>
+
+      <label for="ai-visit-type">Type of consultation</label>
+      <select id="ai-visit-type">
+        <option value="general">General consultation</option>
+        <option value="new">New or unexplained symptoms</option>
+        <option value="followup">Follow-up appointment</option>
+        <option value="medication">Medicine review</option>
+        <option value="ayurveda">Ayurvedic consultation</option>
+        <option value="tests">Laboratory tests or reports</option>
+      </select>
+
+      <button type="button" id="ai-prepare-questions" class="ai-support-primary">
+        Prepare Questions
+      </button>
+
+      <div id="ai-question-output" class="ai-support-output" aria-live="polite">
+        <p>Your consultation questions will appear here.</p>
+      </div>
+    </article>
+
+    <article class="panel ai-support-card">
+      <div class="ai-support-icon">03</div>
+      <h3>Integrated Care Navigator</h3>
+      <p>Explore healthcare systems and identify what to discuss with a qualified practitioner.</p>
+
+      <label for="ai-health-system">Healthcare system</label>
+      <select id="ai-health-system">
+        <option value="Modern Medicine">Modern Medicine</option>
+        <option value="Ayurveda">Ayurveda</option>
+        <option value="Unani">Unani</option>
+        <option value="Siddha">Siddha</option>
+        <option value="Naturopathy and Yoga">Naturopathy and Yoga</option>
+      </select>
+
+      <label for="ai-care-purpose">What support are you looking for?</label>
+      <select id="ai-care-purpose">
+        <option value="new">Assessment of a new concern</option>
+        <option value="ongoing">Ongoing condition management</option>
+        <option value="prevention">Preventive health and lifestyle</option>
+        <option value="review">Review of existing treatment</option>
+        <option value="second">Another professional opinion</option>
+      </select>
+
+      <button type="button" id="ai-navigate-care" class="ai-support-primary">
+        Explore Care Pathway
+      </button>
+
+      <div id="ai-care-output" class="ai-support-output" aria-live="polite">
+        <p>Your care pathway will appear here.</p>
+      </div>
+    </article>
+
+    <article class="panel ai-support-card">
+      <div class="ai-support-icon">04</div>
+      <h3>My Health Summary</h3>
+      <p>Review the summary generated from your entries before sharing it with a professional.</p>
+
+      <div id="ai-summary-output" class="ai-support-output" aria-live="polite">
+        <p>Your organized summary will appear here after you submit your health concern.</p>
+      </div>
+
+      <div class="ai-support-actions">
+        <button type="button" id="ai-copy-summary" class="ai-support-secondary">
+          Copy Summary
+        </button>
+        <button type="button" id="ai-download-summary" class="ai-support-secondary">
+          Download Summary
+        </button>
+        <button type="button" id="ai-clear-summary" class="ai-support-secondary">
+          Clear Entries
+        </button>
+      </div>
+
+      <p id="ai-support-status" class="ai-support-status" role="status" aria-live="polite"></p>
+    </article>
+
+  </div>
+
+  <div class="panel ai-support-safety">
+    <h3>When to seek urgent help</h3>
+    <p>Do not wait to complete this form if you have severe difficulty breathing, chest pain suggestive of a heart attack, sudden facial drooping or one-sided weakness, new difficulty speaking, loss of consciousness, severe bleeding or another life-threatening symptom.</p>
+    <p>Seek emergency medical assistance immediately. In India, call 112 for emergency assistance where available.</p>
+  </div>
+
+  <div class="panel ai-support-privacy">
+    <h3>Privacy and limitations</h3>
+    <p>This version organizes your entries inside your browser. It does not connect to a clinical database or an external AI model. Avoid entering names, addresses, file numbers or other identifying details. Your browser storage and downloaded files may be accessible to other people using your device.</p>
+  </div>
+
+</section>
+
+            <section class="page" id="page-age">
+                <div class="page-intro"><div class="eyebrow">MODULE 13</div>
+                    <h2>Age-Wise Health Guide</h2><p>Explore general health topics by age group.</p></div>
+                <div class="quick-grid">
+                    <div class="quick-card"><span></span><strong>Children</strong><small>Age-appropriate health education</small></div>
+                    <div class="quick-card"><span>â‹</span><strong>Adolescents</strong><small>Growth and wellbeing</small></div>
+                    <div class="quick-card"><span>‰</span><strong>Adults</strong><small>Preventive health education</small></div>
+                    <div class="quick-card"><span>¾</span><strong>Older adults</strong><small>Healthy ageing</small></div>
+                </div>
+            </section>
+
+            <footer class="app-footer">
+                IntegratedHealthAI Â· Patient-first health organization and navigation.
+                Educational support is not a substitute for professional medical care.
+            </footer>
+
+        </div>
+    </main>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+    <script src="mental-wellness-fix.js"></script>
+
+<script src="health-explorer-fix.js"></script>
+<script src="health-explorer-detail.js"></script>
+<script src="ai-health-support.js"></script>
+<script src="age-wise-guide.js"></script>
+<script src="nutrition-connect.js"></script>
+<script src="age-question-block.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
